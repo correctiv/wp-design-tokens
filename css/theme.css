@@ -10,7 +10,9 @@
 :root {
   /* Fonts */
   --var-font-merriweather: "Merriweather", sans-serif;
+  --var-font-serif: var(--var-font-merriweather);
   --var-font-source: "Source Sans 3", sans-serif;
+  --var-font-sans: var(--var-font-source);
 
   /* Font weights */
   --var-font-weight-normal: 400;
