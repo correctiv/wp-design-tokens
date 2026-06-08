@@ -1,4 +1,13 @@
 {
   "name": "wp-design-tokens",
-  "version": "1.0.0"
+  "version": "0.1.0",
+  "license": "GPL-2.0-or-later",
+  "exports": {
+    "./theme.css": "./css/theme.css",
+    "./typography.css": "./css/typography.css",
+    "./utility.css": "./css/utility.css"
+  },
+  "files": [
+    "css/"
+  ]
 }

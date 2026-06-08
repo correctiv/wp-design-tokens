@@ -1,24 +1,33 @@
-/* To have different modes that override variables we need to define them as css variables, see: https://stackoverflow.com/questions/72117668/tailwind-colors-based-on-dark-mode */
-/* But we could also use this approach which is tailwind only: https://simonswiss.com/posts/tailwind-v4-multi-theme */
+/* CORRECTIV Theme */
 
-/* default mode */
+/*
+  Possible approaches for future multi theme implementation:
+  1. CSS variables, see: https://stackoverflow.com/questions/72117668/tailwind-colors-based-on-dark-mode
+  2. Multi-Theme, see: https://simonswiss.com/posts/tailwind-v4-multi-theme
+*/
+
+/* Default mode */
 :root {
-  /* fonts */
+  /* Fonts */
   --var-font-merriweather: "Merriweather", sans-serif;
   --var-font-source: "Source Sans 3", sans-serif;
 
+  /* Font weights */
   --var-font-weight-normal: 400;
   --var-font-weight-semibold: 600;
   --var-font-weight-bold: 700;
 
-  /* base line grid configuration */
-  /* Explanation: https://czak.pl/til/baseline-grid-with-tailwindcss, https://maketypework.com/web-typography-baseline-grids-made-easy/ */
+  /* Baseline Grid */
+  /* @see https://czak.pl/til/baseline-grid-with-tailwindcss, https://maketypework.com/web-typography-baseline-grids-made-easy/ */
   --var-baseline-size: 1.5rem; /* 24px */
   /* We do not need to care about the font-size because we use -1cap in our calculation */
   /* --var-line-height-text-article: calc(var(var(--var-baseline-size)) / var(--var-font-size-text-article)) */
 
+  /* Line height */
   /* line-height (leading) is controlled by the baseline-utility */
   /* we define the line-height and spacing using the baseline grid in the components layer */
+
+  /* Spacing scale */
 
   /* The Spacing scale uses "T-Shirt sizes" naming. The fallback linear scale uses 2px steps. */
   /* Where applicable, the Custom spacing scale should be used. */
@@ -128,7 +137,7 @@
 /* dark mode */
 /* :root[class~='dark'] { */
 @media (prefers-color-scheme: dark) {
-  /* TODO: Set this to the actual values */
+  /* @TODO Set this to the actual values */
   :root {
     --var-color-emphasis: #ff5064;
     --var-color-alternative: #fde162;
