@@ -3,7 +3,7 @@
  */
 
 /* Text */
-.tw-ty-text-article {
+@utility ty-text-article {
   font-family: var(--var-font-serif);
   font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-text-article);
@@ -11,21 +11,21 @@
   word-spacing: var(--var-word-spacing-normal);
   line-height: var(--var-leading-looser);
 }
-.tw-ty-text-s {
+@utility ty-text-s {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-text-s);
   letter-spacing: var(--var-letter-spacing-wider);
   line-height: var(--var-leading-loose);
 }
-.tw-ty-text-m {
+@utility ty-text-m {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-text-m);
   letter-spacing: var(--var-letter-spacing-wide);
   line-height: var(--var-leading-loose);
 }
-.tw-ty-text-l {
+@utility ty-text-l {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-text-l);
@@ -34,66 +34,60 @@
 }
 
 /* Headlines */
-.tw-ty-headline-xs {
+@utility ty-headline-xs {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-xs);
   letter-spacing: var(--var-letter-spacing-wider);
   line-height: var(--var-leading-loose);
 }
-.tw-ty-headline-s {
+@utility ty-headline-s {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-s);
   letter-spacing: var(--var-letter-spacing-wider);
   line-height: var(--var-leading-loose);
   @media (min-width: 48rem) {
-    & {
-      line-height: var(--var-leading-normal);
-    }
+    line-height: var(--var-leading-normal);
   }
 }
-.tw-ty-headline-m {
+@utility ty-headline-m {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-m);
   letter-spacing: var(--var-letter-spacing-normal);
   line-height: var(--var-leading-snug);
 }
-.tw-ty-headline-l {
+@utility ty-headline-l {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-l);
   letter-spacing: var(--var-letter-spacing-tight);
   line-height: var(--var-leading-tight);
 }
-.tw-ty-headline-xl {
+@utility ty-headline-xl {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-xl);
   letter-spacing: var(--var-letter-spacing-tighter);
   line-height: var(--var-leading-tight);
   @media (min-width: 48rem) {
-    & {
-      line-height: var(--var-leading-tighter);
-    }
+    line-height: var(--var-leading-tighter);
   }
 }
-.tw-ty-headline-xxl {
+@utility ty-headline-xxl {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-headline-xxl);
   letter-spacing: var(--var-letter-spacing-tighter);
   line-height: var(--var-leading-tight);
   @media (min-width: 48rem) {
-    & {
-      line-height: var(--var-leading-tighter);
-    }
+    line-height: var(--var-leading-tighter);
   }
 }
 
 /* Buttons */
-.tw-ty-button {
+@utility ty-button {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-text-button);

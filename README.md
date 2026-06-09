@@ -33,7 +33,7 @@ Import whichever files you need in your CSS entry point after installing the pac
 /* CSS custom properties + Tailwind theme, with a Tailwind prefix */
 @import "wp-design-tokens/theme.css" prefix(tw);
 
-/* Composite typography classes */
+/* Composite typography utilities */
 @import "wp-design-tokens/typography.css";
 
 /* Custom Tailwind utilities (baseline grid, duration) */
@@ -57,11 +57,11 @@ The full list of available tokens, class names, and values is in [Available Desi
 
 ### Typography classes
 
-`typography.css` provides ready-made composite classes that bundle font-family, size, weight, letter-spacing, and line-height:
+`typography.css` provides ready-made composite Tailwind utilities that bundle font-family, size, weight, letter-spacing, and line-height:
 
-- **Text:** `.tw-ty-text-article`, `.tw-ty-text-s`, `.tw-ty-text-m`, `.tw-ty-text-l`
-- **Headlines:** `.tw-ty-headline-xs` … `.tw-ty-headline-xxl`
-- **Button:** `.tw-ty-button`
+- **Text:** `tw:ty-text-article`, `tw:ty-text-s`, `tw:ty-text-m`, `tw:ty-text-l`
+- **Headlines:** `tw:ty-headline-xs` … `tw:ty-headline-xxl`
+- **Button:** `tw:ty-button`
 
 ### Utility classes
 
