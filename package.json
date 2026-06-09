@@ -12,5 +12,11 @@
   ],
   "peerDependencies": {
     "tailwindcss": ">=4.1"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-docs.mjs"
   }
 }

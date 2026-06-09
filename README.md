@@ -2,6 +2,20 @@
 
 Shared design tokens for CORRECTIV web projects. Provides CSS custom properties and a [Tailwind v4](https://tailwindcss.com/) theme config as a single source of truth.
 
+**Table of Contents**
+
+- [Usage](#usage)
+  - [Tailwind theme](#tailwind-theme)
+  - [Typography classes](#typography-classes)
+  - [Utility classes](#utility-classes)
+- [Available Design Tokens](#available-design-tokens)
+  - [Typography](#typography)
+  - [Layout](#layout)
+  - [Colors](#colors)
+  - [Radius](#radius)
+  - [Duration](#duration)
+- [Updating Tokens](#updating-tokens)
+
 ## Usage
 
 Add to `package.json` devDependencies (you can reference any Git ref):
@@ -145,19 +159,19 @@ Tokens are available for all spacing utilities: `p-{name}`, `m-{name}`, `gap-{na
 
 | Token                                                                                                                | CSS Custom Property | Tailwind Class | Value            |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- | ---------------- |
-| <span style="display:inline-block;width:20px;height:2px;background:currentColor;vertical-align:middle"></span> 4xs   | `--var-spacing-4xs` | `p-4xs`        | 0.125 rem (2 px) |
-| <span style="display:inline-block;width:20px;height:4px;background:currentColor;vertical-align:middle"></span> 3xs   | `--var-spacing-3xs` | `p-3xs`        | 0.25 rem (4 px)  |
-| <span style="display:inline-block;width:20px;height:6px;background:currentColor;vertical-align:middle"></span> 2xs   | `--var-spacing-2xs` | `p-2xs`        | 0.375 rem (6 px) |
-| <span style="display:inline-block;width:20px;height:8px;background:currentColor;vertical-align:middle"></span> xs    | `--var-spacing-xs`  | `p-xs`         | 0.5 rem (8 px)   |
-| <span style="display:inline-block;width:20px;height:12px;background:currentColor;vertical-align:middle"></span> s    | `--var-spacing-s`   | `p-s`          | 0.75 rem (12 px) |
-| <span style="display:inline-block;width:20px;height:16px;background:currentColor;vertical-align:middle"></span> sm   | `--var-spacing-sm`  | `p-sm`         | 1 rem (16 px)    |
-| <span style="display:inline-block;width:20px;height:24px;background:currentColor;vertical-align:middle"></span> m    | `--var-spacing-m`   | `p-m`          | 1.5 rem (24 px)  |
-| <span style="display:inline-block;width:20px;height:32px;background:currentColor;vertical-align:middle"></span> ml   | `--var-spacing-ml`  | `p-ml`         | 2 rem (32 px)    |
-| <span style="display:inline-block;width:20px;height:36px;background:currentColor;vertical-align:middle"></span> l    | `--var-spacing-l`   | `p-l`          | 2.25 rem (36 px) |
-| <span style="display:inline-block;width:20px;height:48px;background:currentColor;vertical-align:middle"></span> xl   | `--var-spacing-xl`  | `p-xl`         | 3 rem (48 px)    |
-| <span style="display:inline-block;width:20px;height:64px;background:currentColor;vertical-align:middle"></span> 2xl  | `--var-spacing-2xl` | `p-2xl`        | 4 rem (64 px)    |
-| <span style="display:inline-block;width:20px;height:96px;background:currentColor;vertical-align:middle"></span> 3xl  | `--var-spacing-3xl` | `p-3xl`        | 6 rem (96 px)    |
-| <span style="display:inline-block;width:20px;height:128px;background:currentColor;vertical-align:middle"></span> 4xl | `--var-spacing-4xl` | `p-4xl`        | 8 rem (128 px)   |
+| <span style="display:inline-block;width:20px;height:2px;background:currentColor;vertical-align:middle"></span> 4XS   | `--var-spacing-4xs` | `p-4xs`        | 0.125 rem (2 px) |
+| <span style="display:inline-block;width:20px;height:4px;background:currentColor;vertical-align:middle"></span> 3XS   | `--var-spacing-3xs` | `p-3xs`        | 0.25 rem (4 px)  |
+| <span style="display:inline-block;width:20px;height:6px;background:currentColor;vertical-align:middle"></span> 2XS   | `--var-spacing-2xs` | `p-2xs`        | 0.375 rem (6 px) |
+| <span style="display:inline-block;width:20px;height:8px;background:currentColor;vertical-align:middle"></span> XS    | `--var-spacing-xs`  | `p-xs`         | 0.5 rem (8 px)   |
+| <span style="display:inline-block;width:20px;height:12px;background:currentColor;vertical-align:middle"></span> S    | `--var-spacing-s`   | `p-s`          | 0.75 rem (12 px) |
+| <span style="display:inline-block;width:20px;height:16px;background:currentColor;vertical-align:middle"></span> SM   | `--var-spacing-sm`  | `p-sm`         | 1 rem (16 px)    |
+| <span style="display:inline-block;width:20px;height:24px;background:currentColor;vertical-align:middle"></span> M    | `--var-spacing-m`   | `p-m`          | 1.5 rem (24 px)  |
+| <span style="display:inline-block;width:20px;height:32px;background:currentColor;vertical-align:middle"></span> ML   | `--var-spacing-ml`  | `p-ml`         | 2 rem (32 px)    |
+| <span style="display:inline-block;width:20px;height:36px;background:currentColor;vertical-align:middle"></span> L    | `--var-spacing-l`   | `p-l`          | 2.25 rem (36 px) |
+| <span style="display:inline-block;width:20px;height:48px;background:currentColor;vertical-align:middle"></span> XL   | `--var-spacing-xl`  | `p-xl`         | 3 rem (48 px)    |
+| <span style="display:inline-block;width:20px;height:64px;background:currentColor;vertical-align:middle"></span> 2XL  | `--var-spacing-2xl` | `p-2xl`        | 4 rem (64 px)    |
+| <span style="display:inline-block;width:20px;height:96px;background:currentColor;vertical-align:middle"></span> 3XL  | `--var-spacing-3xl` | `p-3xl`        | 6 rem (96 px)    |
+| <span style="display:inline-block;width:20px;height:128px;background:currentColor;vertical-align:middle"></span> 4XL | `--var-spacing-4xl` | `p-4xl`        | 8 rem (128 px)   |
 
 ---
 
@@ -184,9 +198,9 @@ Color tokens are available with any Tailwind color utility prefix: `bg-{name}`, 
 
 | Token                                                                                                                                      | CSS Custom Property | Tailwind Class | Value             |
 | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- | ----------------- |
-| <span style="display:inline-block;width:24px;height:24px;border:2px solid currentColor;border-radius:1px;vertical-align:middle"></span> XS | `--var-radius-xs`   | `rounded-xs`   | 0.0625 rem (1 px) |
-| <span style="display:inline-block;width:24px;height:24px;border:2px solid currentColor;border-radius:2px;vertical-align:middle"></span> S  | `--var-radius-s`    | `rounded-s`    | 0.125 rem (2 px)  |
-| <span style="display:inline-block;width:24px;height:24px;border:2px solid currentColor;border-radius:5px;vertical-align:middle"></span> MD | `--var-radius-md`   | `rounded-md`   | 0.3125 rem (5 px) |
+| <span style="display:inline-block;width:24px;height:24px;border:1px solid currentColor;border-radius:1px;vertical-align:middle"></span> XS | `--var-radius-xs`   | `rounded-xs`   | 0.0625 rem (1 px) |
+| <span style="display:inline-block;width:24px;height:24px;border:1px solid currentColor;border-radius:2px;vertical-align:middle"></span> S  | `--var-radius-s`    | `rounded-s`    | 0.125 rem (2 px)  |
+| <span style="display:inline-block;width:24px;height:24px;border:1px solid currentColor;border-radius:5px;vertical-align:middle"></span> MD | `--var-radius-md`   | `rounded-md`   | 0.3125 rem (5 px) |
 
 ---
 
