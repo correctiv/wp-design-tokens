@@ -9,5 +9,8 @@
   },
   "files": [
     "css/"
-  ]
+  ],
+  "peerDependencies": {
+    "tailwindcss": ">=4.1"
+  }
 }

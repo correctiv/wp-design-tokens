@@ -5,7 +5,9 @@
  *  - V is the target line height in grid lines
  *  - M is the push
  *
- * Credit: https://czak.pl/til/baseline-grid-with-tailwindcss
+ * @see
+ * - https://czak.pl/til/baseline-grid-with-tailwindcss
+ * - https://maketypework.com/web-typography-baseline-grids-made-easy/
  */
 @utility baseline-* {
   /* Calculate shift based on --value(integer) */
@@ -47,4 +49,13 @@
  */
 @utility duration-* {
   transition-duration: --value(--duration-*);
+}
+
+/**
+ * Word spacing – exposes theme word-spacing tokens as utility classes.
+ * Tailwind v4 has no built-in word-spacing utility, so this registers one.
+ * See: https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
+ */
+@utility word-spacing-normal {
+  word-spacing: var(--var-word-spacing-normal);
 }
