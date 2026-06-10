@@ -1,0 +1,22 @@
+{
+  "name": "wp-design-tokens",
+  "version": "0.1.0",
+  "license": "GPL-2.0-or-later",
+  "exports": {
+    "./theme.css": "./css/theme.css",
+    "./typography.css": "./css/typography.css",
+    "./utility.css": "./css/utility.css"
+  },
+  "files": [
+    "css/"
+  ],
+  "peerDependencies": {
+    "tailwindcss": ">=4.1"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-docs.mjs"
+  }
+}
