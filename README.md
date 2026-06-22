@@ -18,7 +18,7 @@ Shared design tokens for CORRECTIV web projects. Provides CSS custom properties 
 
 ## Usage
 
-Add to `package.json` devDependencies (you can reference any Git ref):
+Add to `package.json` devDependencies (you can reference any [Git ref](https://git-scm.com/book/en/v2/Git-Internals-Git-References)):
 
 ```json
 "wp-design-tokens": "correctiv/wp-design-tokens#<ref>"
@@ -177,7 +177,7 @@ Tokens are available for all spacing utilities: `p-{name}`, `m-{name}`, `gap-{na
 
 ### Colors
 
-Color tokens are available with any Tailwind color utility prefix: `bg-{name}`, `text-{name}`, `border-{name}`, `ring-{name}`, etc.
+Color tokens are available with any Tailwind color utility prefix: `bg-{name}`, `text-{name}`, `border-{name}`, etc.
 
 | Token                                                                                                                                                                     | CSS Custom Property       | Tailwind Class                        | Value     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------- | --------- |
@@ -215,6 +215,18 @@ Color tokens are available with any Tailwind color utility prefix: `bg-{name}`, 
 
 ## Updating Tokens
 
-1. Edit the relevant file under `css/` and commit.
-2. Pin the new commit SHA in each consuming repo's `package.json`.
-3. Run `npm install` in the consuming repo.
+**Apply changes**
+
+1. Edit the relevant file under `css/`.
+2. Update the README to reflect current state.
+3. Commit & push your changes (follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format).
+
+**Publish changes**
+
+1. `git tag -a v0.4.0 -m "v0.4.0 – Summary of changes"` – instead of "v0.4.0" put the actual [semantic version](https://semver.org/) number.
+2. Create a release via the [Github Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) feature (using "v0.4.0 – Summary of changes" as the release title).
+
+**Update consuming repos**
+
+1. Pin the new version in `package.json`: `"wp-design-tokens": "correctiv/wp-design-tokens#v0.4.0"`
+2. Run `npm install`.
