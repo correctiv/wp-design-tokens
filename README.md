@@ -179,6 +179,59 @@ Tokens are available for all spacing utilities: `p-{name}`, `m-{name}`, `gap-{na
 
 Color tokens are available with any Tailwind color utility prefix: `bg-{name}`, `text-{name}`, `border-{name}`, etc.
 
+Tokens are layered: **primitives** are the raw palette; **semantic** tokens describe an intended use (accent, background, foreground, stroke) and are built from primitives. Prefer semantic tokens in product code - primitives exist mainly to back them.
+
+#### Primitives
+
+Neutrals use a numeric scale rather than "grey", to distinguish this tonal ramp from chromatic color families - lower numbers are lighter, and only the positions currently needed are defined. Black and white are named independently, as absolute endpoints rather than designed tonal steps. Red and yellow are individual brand colors rather than full ramps; their numeric position (`red-500`, `yellow-400`) reflects where they'd sit in a future ramp, so more steps can be added later without renaming – `red-500` anchors the pure hue at the ramp's center (no tints or shades mixed in), while `yellow-400` is positioned slightly higher to preserve room for lighter variants and prevent compression of darker tones.
+
+| Token                                                                                                                                                                     | CSS Custom Property       | Tailwind Class                        | Value     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------- | --------- |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#000000;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Black       | `--var-color-black`       | `bg-black` · `text-black`             | `#000000` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#ffffff;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> White       | `--var-color-white`       | `bg-white` · `text-white`             | `#ffffff` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#f8f8f8;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 100 | `--var-color-neutral-100` | `bg-neutral-100` · `text-neutral-100` | `#f8f8f8` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#e6e6e6;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 200 | `--var-color-neutral-200` | `bg-neutral-200` · `text-neutral-200` | `#e6e6e6` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#cecece;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 300 | `--var-color-neutral-300` | `bg-neutral-300` · `text-neutral-300` | `#cecece` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#b3b3b3;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 400 | `--var-color-neutral-400` | `bg-neutral-400` · `text-neutral-400` | `#b3b3b3` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#707070;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 500 | `--var-color-neutral-500` | `bg-neutral-500` · `text-neutral-500` | `#707070` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#4a4a4a;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 600 | `--var-color-neutral-600` | `bg-neutral-600` · `text-neutral-600` | `#4a4a4a` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#333333;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Neutral 700 | `--var-color-neutral-700` | `bg-neutral-700` · `text-neutral-700` | `#333333` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#ff5064;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Red 500     | `--var-color-red-500`     | `bg-red-500` · `text-red-500`         | `#ff5064` |
+| <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#fde162;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Yellow 400  | `--var-color-yellow-400`  | `bg-yellow-400` · `text-yellow-400`   | `#fde162` |
+
+#### Semantic
+
+**Accent** colors are used to draw attention. Named functionally rather than brand-primary/-secondary, though "accent" is effectively CORRECTIV's branding - there is deliberately no top-level "brand" family, since every color here is assumed to express brand.
+
+**Background** describes context via 3 roles, named rather than numbered (`-1`/`-2`/`-3`) for memorable, readable usage; the "-background" suffix is omitted since the names already say so:
+
+- `background` - "ground zero", the overall page background
+- `canvas` - the white background of sections/post content, where content is "painted on"
+- `surface` - the grey background that separates content from canvas (accordions, info boxes, ...)
+
+**Foreground** (aka text) colors pick up a background role with an "-on-" prefix, to express which context they're intended for. Named "foreground" rather than "text" since it also covers icons and other non-text elements. Modifiers (`-muted`, `-accent`) can be appended as needed.
+
+**Stroke** describes colors for linear elements - borders, dividers, line iconography - that provide structure without competing with content.
+
+| Token                        | CSS Custom Property              | Tailwind Class                                      | Value                     |
+| ---------------------------- | -------------------------------- | --------------------------------------------------- | ------------------------- |
+| Accent                       | `--var-color-accent`             | `bg-accent` · `text-accent`                         | `--var-color-red-500`     |
+| Accent alternative           | `--var-color-accent-alternative` | `bg-accent-alternative` · `text-accent-alternative` | `--var-color-yellow-400`  |
+| Background                   | `--var-color-background`         | `bg-background`                                     | `--var-color-neutral-100` |
+| Canvas                       | `--var-color-canvas`             | `bg-canvas`                                         | `--var-color-white`       |
+| Surface                      | `--var-color-surface`            | `bg-surface`                                        | `--var-color-neutral-100` |
+| Foreground on background     | `--var-color-on-background`      | `text-on-background`                                | `--var-color-neutral-600` |
+| Foreground on canvas         | `--var-color-on-canvas`          | `text-on-canvas`                                    | `--var-color-neutral-700` |
+| Foreground on surface        | `--var-color-on-surface`         | `text-on-surface`                                   | `--var-color-neutral-700` |
+| Foreground on canvas, muted  | `--var-color-on-canvas-muted`    | `text-on-canvas-muted`                              | `--var-color-neutral-500` |
+| Foreground on canvas, accent | `--var-color-on-canvas-accent`   | `text-on-canvas-accent`                             | `--var-color-accent`      |
+| Stroke                       | `--var-color-stroke`             | `border-stroke` · `fill-stroke`                     | `--var-color-neutral-300` |
+| Stroke, strong               | `--var-color-stroke-strong`      | `border-stroke-strong` · `fill-stroke-strong`       | `--var-color-neutral-400` |
+
+#### Deprecated (v1)
+
+Superseded by the primitive/semantic tokens above. Values are unchanged - kept as aliases until all submodules migrate, then removed in a future version.
+
 | Token                                                                                                                                                                     | CSS Custom Property       | Tailwind Class                        | Value     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------- | --------- |
 | <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#ff5064;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Emphasis    | `--var-color-emphasis`    | `bg-emphasis` · `text-emphasis`       | `#ff5064` |
