@@ -87,66 +87,39 @@
 
   /* Colors */
 
-  /* Primitives (aka palette).
-     Neutrals use a numeric scale (000-900, Material-Design-inspired) rather than "grey", to
-     distinguish this tonal ramp from chromatic color families; lower numbers are lighter. Only
-     the positions currently needed are defined - unused positions remain available for later.
-     Black/white are named independently, as absolute endpoints rather than designed tonal steps.
-     Red/yellow are individual brand colors, not full ramps yet; their numeric position (500/400)
-     reflects where they'd sit in a prospective ramp, so future steps can be added without renaming. */
+  /* Primitives */
   --var-color-black: #000000;
   --var-color-white: #ffffff;
   --var-color-neutral-100: #f8f8f8;
   --var-color-neutral-200: #e6e6e6;
   --var-color-neutral-300: #cecece;
-  --var-color-neutral-400: #b3b3b3; /* heavily muted, inaccessible for text */
+  --var-color-neutral-400: #b3b3b3;
   --var-color-neutral-500: #707070;
   --var-color-neutral-600: #4a4a4a;
   --var-color-neutral-700: #333333;
   --var-color-red-500: #ff5064;
   --var-color-yellow-400: #fde162;
 
-  /* Semantic.
-     Accent: colors used to draw attention; functionally named rather than as brand-primary/
-     -secondary, though "accent" is effectively CORRECTIV's branding. There is deliberately no
-     top-level "brand" family, since every color here is assumed to express brand. */
+  /* Semantic */
   --var-color-accent: var(--var-color-red-500);
   --var-color-accent-alternative: var(--var-color-yellow-400);
-
-  /* Background: the 3 roles a background color can play. Named instead of numbered (-1/-2/-3)
-     for readable usage (e.g. "-on-3" isn't memorable) and omit the "-background" suffix since
-     the terms themselves already say so. */
-  --var-color-background: var(
-    --var-color-neutral-100
-  ); /* "ground zero" - the overall page background */
-  --var-color-canvas: var(
-    --var-color-white
-  ); /* white background of sections / post content, where content is "painted on" */
-  --var-color-surface: var(
-    --var-color-neutral-100
-  ); /* grey background for accordions, info boxes etc., separating content from canvas */
-
-  /* Foreground (aka text): "-on-" expresses which background context it's meant for.
-     Modifiers can be appended as needed, e.g. -muted, -accent. 
-     "foreground" is omitted by purpose here. */
+  --var-color-background: var(--var-color-neutral-100);
+  --var-color-canvas: var(--var-color-white);
+  --var-color-surface: var(--var-color-neutral-100);
   --var-color-on-background: var(--var-color-neutral-600);
   --var-color-on-canvas: var(--var-color-neutral-700);
   --var-color-on-surface: var(--var-color-neutral-700);
   --var-color-on-canvas-muted: var(--var-color-neutral-500);
   --var-color-on-canvas-accent: var(--var-color-accent);
-
-  /* Stroke: linear elements - borders, dividers, line iconography - that provide structure
-     without competing with content. */
   --var-color-stroke: var(--var-color-neutral-300);
   --var-color-stroke-strong: var(--var-color-neutral-400);
 
-  /* Deprecated v1 color tokens - superseded by the primitive/semantic tokens above.
-     Kept as aliases so existing consumers keep working; remove once all submodules migrate. */
+  /* Deprecated v1 */
   --var-color-emphasis: var(--var-color-accent);
   --var-color-alternative: var(--var-color-accent-alternative);
   --var-color-grey-100: var(--var-color-white);
   --var-color-grey-200: var(--var-color-neutral-100);
-  --var-color-grey-250: #f0f0f0; /* dropped from the new ramp, no replacement - left as literal */
+  --var-color-grey-250: #f0f0f0; /* dropped from the new ramp, no replacement */
   --var-color-grey-300: var(--var-color-neutral-200);
   --var-color-grey-400: var(--var-color-neutral-300);
   --var-color-grey-500: var(--var-color-neutral-400);
