@@ -157,7 +157,7 @@ Semantic tokens are built from two internal px-named primitive ramps (`--var-fon
 | Token                                                             | CSS Custom Property                | Tailwind Class            | Value (mobile / tablet) |
 | ---------------------------------------------------------------------- | -------------------------------------- | --------------------------- | ------------------------ |
 | <span style="font-size:1rem">Aa</span> Button                  | `--var-font-size-button`            | `text-button`              | 16 px                    |
-| <span style="font-size:.9375rem">Aa</span> Interactive Title   | `--var-font-size-interactive-title` | `text-interactive-title`   | 15 px / 16 px            |
+| <span style="font-size:1.0625rem">Aa</span> Interactive Title  | `--var-font-size-interactive-title` | `text-interactive-title`   | 17 px                    |
 
 #### Letter Spacing
 
@@ -168,6 +168,7 @@ Semantic tokens are built from two internal px-named primitive ramps (`--var-fon
 | <span style="letter-spacing:0">AaBb</span> Normal      | `--var-letter-spacing-normal`  | `tracking-normal`  | 0 px    |
 | <span style="letter-spacing:.1px">AaBb</span> Wide     | `--var-letter-spacing-wide`    | `tracking-wide`    | 0.1 px  |
 | <span style="letter-spacing:.2px">AaBb</span> Wider    | `--var-letter-spacing-wider`   | `tracking-wider`   | 0.2 px  |
+| <span style="letter-spacing:.3px">AaBb</span> Widest   | `--var-letter-spacing-widest`  | `tracking-widest`  | 0.3 px  |
 
 #### Word Spacing
 

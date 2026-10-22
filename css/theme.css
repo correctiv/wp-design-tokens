@@ -44,7 +44,7 @@
 
   /* Font sizes – Semantic */
   /* 1. Headings & hierarchy */
-  --var-font-size-display: var(--var-font-size-sans-24); /* mobile; 70px at >=48rem — mobile value inferred from .detail__title, please confirm */
+  --var-font-size-display: var(--var-font-size-sans-24); /* mobile; 70px at >=48rem — mobile value inferred from .detail__title. */
   --var-font-size-headline-xs: var(--var-font-size-sans-17);
   --var-font-size-headline-s: var(--var-font-size-sans-17);
   --var-font-size-headline-m: var(--var-font-size-sans-19);
@@ -67,7 +67,7 @@
 
   /* 4. Interactive */
   --var-font-size-button: var(--var-font-size-sans-16);
-  --var-font-size-interactive-title: var(--var-font-size-sans-15); /* mobile; 16px at >=48rem — sourced from .detail__box-title */
+  --var-font-size-interactive-title: var(--var-font-size-sans-17);
 
   /* Letter spacing */
   --var-letter-spacing-tighter: -0.2px;
@@ -75,6 +75,7 @@
   --var-letter-spacing-normal: 0px;
   --var-letter-spacing-wide: 0.1px;
   --var-letter-spacing-wider: 0.2px;
+  --var-letter-spacing-widest: 0.3px;
 
   /* Word spacing */
   --var-word-spacing-normal: 0.109375rem; /* = 0.1em = 1.75px */
@@ -198,9 +199,6 @@
     --var-font-size-byline: var(--var-font-size-sans-15);
     --var-font-size-kicker-compact: var(--var-font-size-sans-17);
     --var-font-size-kicker-prominent: var(--var-font-size-sans-15);
-
-    /* 4. Interactive */
-    --var-font-size-interactive-title: var(--var-font-size-sans-16);
   }
 }
 
@@ -273,6 +271,7 @@
   --tracking-normal: var(--var-letter-spacing-normal);
   --tracking-wide: var(--var-letter-spacing-wide);
   --tracking-wider: var(--var-letter-spacing-wider);
+  --tracking-widest: var(--var-letter-spacing-widest);
 
   /* Word spacing */
   --word-spacing-normal: var(--var-word-spacing-normal);

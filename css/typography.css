@@ -115,22 +115,24 @@
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-caption);
-  letter-spacing: 0.3px; /* sourced value; doesn't land on an existing letter-spacing step (nearest is wider, 0.2px) */
+  letter-spacing: var(--var-letter-spacing-widest);
   line-height: var(--var-leading-normal);
 }
+/* Kicker names describe context, not size: compact is the repeated label
+   on teaser cards, prominent the single label in the full article view.
+   Prominent is the smaller of the two but set bold and uppercase. */
 @utility ty-kicker-compact {
   font-family: var(--var-font-sans);
-  font-weight: var(--var-font-weight-semibold);
+  font-weight: var(--var-font-weight-normal);
   font-size: var(--var-font-size-kicker-compact);
-  letter-spacing: 1px; /* sourced from .topline; far outside the current letter-spacing scale (5x "wider") */
+  letter-spacing: var(--var-letter-spacing-widest);
   line-height: var(--var-leading-none);
-  text-transform: uppercase;
 }
 @utility ty-kicker-prominent {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
   font-size: var(--var-font-size-kicker-prominent);
-  letter-spacing: 1px; /* same note as ty-kicker-compact */
+  letter-spacing: 1px;
   line-height: var(--var-leading-none);
   text-transform: uppercase;
 }
@@ -147,7 +149,6 @@
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-semibold);
   font-size: var(--var-font-size-interactive-title);
-  letter-spacing: var(--var-letter-spacing-normal);
-  line-height: var(--var-leading-looser); /* sourced as a fixed 29px; ratio to font-size varies 1.81–1.93 across breakpoints, looser(1.8) is the closest single step */
-  text-transform: uppercase;
+  letter-spacing: var(--var-letter-spacing-wider);
+  line-height: var(--var-leading-loose);
 }
