@@ -2,38 +2,17 @@
  * Typography composite tokens.
  */
 
-/* Text */
-@utility ty-text-article {
-  font-family: var(--var-font-serif);
-  font-weight: var(--var-font-weight-normal);
-  font-size: var(--var-font-size-text-article);
-  letter-spacing: var(--var-letter-spacing-wider);
-  word-spacing: var(--var-word-spacing-normal);
-  line-height: var(--var-leading-looser);
-}
-@utility ty-text-s {
+/* 1. Headings & hierarchy */
+@utility ty-display {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-normal);
-  font-size: var(--var-font-size-text-s);
-  letter-spacing: var(--var-letter-spacing-wider);
-  line-height: var(--var-leading-loose);
+  font-size: var(--var-font-size-display);
+  letter-spacing: var(--var-letter-spacing-normal);
+  line-height: var(--var-leading-tight); /* sourced mobile ratio was 1.25 — rounded to the nearest existing step (1.2) */
+  @media (min-width: 48rem) {
+    line-height: var(--var-leading-none); /* sourced desktop ratio was exactly 1 */
+  }
 }
-@utility ty-text-m {
-  font-family: var(--var-font-sans);
-  font-weight: var(--var-font-weight-normal);
-  font-size: var(--var-font-size-text-m);
-  letter-spacing: var(--var-letter-spacing-wide);
-  line-height: var(--var-leading-loose);
-}
-@utility ty-text-l {
-  font-family: var(--var-font-sans);
-  font-weight: var(--var-font-weight-normal);
-  font-size: var(--var-font-size-text-l);
-  letter-spacing: var(--var-letter-spacing-wide);
-  line-height: var(--var-leading-relaxed);
-}
-
-/* Headlines */
 @utility ty-headline-xs {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
@@ -85,12 +64,91 @@
     line-height: var(--var-leading-tighter);
   }
 }
+@utility ty-lead {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-lead);
+  letter-spacing: var(--var-letter-spacing-wide);
+  line-height: var(--var-leading-relaxed); /* reuses ty-body-l's rhythm — same font-size steps, same role family */
+}
 
-/* Buttons */
+/* 2. Body & reading */
+@utility ty-body-article {
+  font-family: var(--var-font-serif);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-body-article);
+  letter-spacing: var(--var-letter-spacing-wider);
+  word-spacing: var(--var-word-spacing-normal);
+  line-height: var(--var-leading-looser);
+}
+@utility ty-body-l {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-body-l);
+  letter-spacing: var(--var-letter-spacing-wide);
+  line-height: var(--var-leading-relaxed);
+}
+@utility ty-body-m {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-body-m);
+  letter-spacing: var(--var-letter-spacing-wide);
+  line-height: var(--var-leading-loose);
+}
+@utility ty-body-s {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-body-s);
+  letter-spacing: var(--var-letter-spacing-wider);
+  line-height: var(--var-leading-loose);
+}
+
+/* 3. Labels & metadata */
+@utility ty-byline {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-byline);
+  letter-spacing: var(--var-letter-spacing-normal);
+  line-height: var(--var-leading-none);
+}
+@utility ty-caption {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-caption);
+  letter-spacing: var(--var-letter-spacing-widest);
+  line-height: var(--var-leading-normal);
+}
+/* Kicker names describe context, not size: compact is the repeated label
+   on teaser cards, prominent the single label in the full article view.
+   Prominent is the smaller of the two but set bold and uppercase. */
+@utility ty-kicker-compact {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-normal);
+  font-size: var(--var-font-size-kicker-compact);
+  letter-spacing: var(--var-letter-spacing-widest);
+  line-height: var(--var-leading-none);
+}
+@utility ty-kicker-prominent {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-bold);
+  font-size: var(--var-font-size-kicker-prominent);
+  letter-spacing: 1px;
+  line-height: var(--var-leading-none);
+  text-transform: uppercase;
+}
+
+/* 4. Interactive */
 @utility ty-button {
   font-family: var(--var-font-sans);
   font-weight: var(--var-font-weight-bold);
-  font-size: var(--var-font-size-text-button);
+  font-size: var(--var-font-size-button);
+  letter-spacing: var(--var-letter-spacing-wider);
+  line-height: var(--var-leading-loose);
+}
+@utility ty-interactive-title {
+  font-family: var(--var-font-sans);
+  font-weight: var(--var-font-weight-semibold);
+  font-size: var(--var-font-size-interactive-title);
   letter-spacing: var(--var-letter-spacing-wider);
   line-height: var(--var-leading-loose);
 }
