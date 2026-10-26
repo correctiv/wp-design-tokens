@@ -241,12 +241,12 @@
   /* Font sizes */
   /* 1. Headings & hierarchy */
   --text-display: var(--var-font-size-display);
-  --headline-xs: var(--var-font-size-headline-xs);
-  --headline-s: var(--var-font-size-headline-s);
-  --headline-m: var(--var-font-size-headline-m);
-  --headline-l: var(--var-font-size-headline-l);
-  --headline-xl: var(--var-font-size-headline-xl);
-  --headline-xxl: var(--var-font-size-headline-xxl);
+  --text-headline-xs: var(--var-font-size-headline-xs);
+  --text-headline-s: var(--var-font-size-headline-s);
+  --text-headline-m: var(--var-font-size-headline-m);
+  --text-headline-l: var(--var-font-size-headline-l);
+  --text-headline-xl: var(--var-font-size-headline-xl);
+  --text-headline-xxl: var(--var-font-size-headline-xxl);
   --text-lead: var(--var-font-size-lead);
 
   /* 2. Body & reading */

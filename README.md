@@ -2,6 +2,8 @@
 
 Shared design tokens for CORRECTIV web projects. Provides CSS custom properties and a [Tailwind v4](https://tailwindcss.com/) theme config as a single source of truth.
 
+> Tailwind class names in this README omit any project-level prefix (e.g. `tw:`). If a prefix is configured, prepend it: `tw:text-body-article`.
+
 **Table of Contents**
 
 - [Usage](#usage)
@@ -46,11 +48,11 @@ Import whichever files you need in your CSS entry point after installing the pac
 
 ```html
 <p
-  class="tw:font-serif tw:text-body-article tw:tracking-wider tw:leading-looser tw:text-grey-700"
+  class="font-serif text-body-article tracking-wider leading-looser text-grey-700"
 >
   …
 </p>
-<div class="tw:bg-emphasis tw:p-m tw:rounded-md">…</div>
+<div class="bg-emphasis p-m rounded-md">…</div>
 ```
 
 The full list of available tokens, class names, and values is in [Available Design Tokens](#available-design-tokens).
@@ -61,42 +63,40 @@ The full list of available tokens, class names, and values is in [Available Desi
 
 **1. Headings & hierarchy**
 
-- **`tw:ty-display`** — Page-level hero title for a single long-form article.
-- **`tw:ty-headline-xs` … `tw:ty-headline-xxl`** — General-purpose headline scale: teaser cards, carousel/scroller/fact-tile headlines, section headings, in-article subheadings.
-- **`tw:ty-lead`** — Subheadline / excerpt under a headline.
+- **`ty-display`** — Page-level hero title for a single long-form article.
+- **`ty-headline-xs` … `ty-headline-xxl`** — General-purpose headline scale: teaser cards, carousel/scroller/fact-tile headlines, section headings, in-article subheadings.
+- **`ty-lead`** — Subheadline / excerpt under a headline.
 
 **2. Body & reading**
 
-- **`tw:ty-body-article`** — Long-form serif reading copy for a single article body.
-- **`tw:ty-body-l`** — Larger sans body copy (intro paragraphs, pull-quote body text).
-- **`tw:ty-body-m`** — Standard sans body copy.
-- **`tw:ty-body-s`** — Smaller sans copy.
+- **`ty-body-article`** — Long-form serif reading copy for a single article body.
+- **`ty-body-l`** — Larger sans body copy (intro paragraphs, pull-quote body text).
+- **`ty-body-m`** — Standard sans body copy.
+- **`ty-body-s`** — Smaller sans copy.
 
 **3. Labels & metadata**
 
-- **`tw:ty-byline`** — Author/date line under an article header.
-- **`tw:ty-caption`** — Small, muted caption under a figure or image.
-- **`tw:ty-kicker-compact`** — Small topline label above a headline, for teaser/card contexts.
-- **`tw:ty-kicker-prominent`** — Topline label above a headline, for the full article view.
+- **`ty-byline`** — Author/date line under an article header.
+- **`ty-caption`** — Small, muted caption under a figure or image.
+- **`ty-kicker-compact`** — Small topline label above a headline, for teaser/card contexts.
+- **`ty-kicker-prominent`** — Topline label above a headline, for the full article view.
 
 **4. Interactive**
 
-- **`tw:ty-button`** — CTA button label text.
-- **`tw:ty-interactive-title`** — Title on interactive list item.
+- **`ty-button`** — CTA button label text.
+- **`ty-interactive-title`** — Title on interactive list item.
 
 ### Utility classes
 
 `utility.css` registers two custom Tailwind utilities:
 
-- **`baseline-{V}`** / **`baseline-{V}/{M}`** — snaps an element to the 24 px baseline grid. `V` is the target line height in grid lines; optional `M` overrides the push (e.g. `tw:baseline-2/1`).
+- **`baseline-{V}`** / **`baseline-{V}/{M}`** — snaps an element to the 24 px baseline grid. `V` is the target line height in grid lines; optional `M` overrides the push (e.g. `baseline-2/1`).
 - **`duration-fast`** / **`duration-slow`** — maps the theme duration tokens to `transition-duration` (Tailwind v4 does not expose these natively via `@theme`).
 - **`word-spacing-normal`** — applies `--var-word-spacing-normal` to `word-spacing` (Tailwind v4 has no built-in word-spacing utility).
 
 ## Available Design Tokens
 
 All tokens are defined in `css/theme.css`. `--var-*` properties can be used directly in any CSS; Tailwind utility classes are derived from the `@theme inline` block. Note that `--*: initial` resets all Tailwind defaults — only the tokens below are available as utilities.
-
-> Tailwind class names below omit any project-level prefix (e.g. `tw:`). If a prefix is configured, prepend it: `tw:text-article`.
 
 ### Typography
 
@@ -117,47 +117,45 @@ All tokens are defined in `css/theme.css`. `--var-*` properties can be used dire
 
 #### Font Sizes
 
-Font sizes are responsive; values change at the `48rem` (768 px) breakpoint. A single value means no breakpoint change. `--text-*` tokens are Tailwind font-size utilities; `--headline-*` tokens are CSS variables used via the arbitrary-value shorthand.
-
-Semantic tokens are built from two internal px-named primitive ramps (`--var-font-size-sans-*`, `--var-font-size-serif-*`) in `theme.css`; prefer the semantic tokens below in product code.
+Font sizes are responsive; values change at the `48rem` (768 px) breakpoint. A single value means no breakpoint change. Semantic tokens are built from two internal px-named primitive ramps (`--var-font-size-sans-*`, `--var-font-size-serif-*`) in `theme.css`; prefer the semantic tokens below in product code.
 
 **1. Headings & hierarchy**
 
-| Token                                                     | CSS Custom Property            | Tailwind Class         | Value (mobile / tablet) |
-| ---------------------------------------------------------- | -------------------------------- | ------------------------ | ------------------------ |
-| <span style="font-size:1.5rem">Aa</span> Display         | `--var-font-size-display`      | `text-display`          | 24 px / 70 px            |
-| <span style="font-size:1.0625rem">Aa</span> Headline XS  | `--var-font-size-headline-xs`  | `text-(--headline-xs)`  | 17 px                    |
-| <span style="font-size:1.0625rem">Aa</span> Headline S   | `--var-font-size-headline-s`   | `text-(--headline-s)`   | 17 px / 20 px            |
-| <span style="font-size:1.1875rem">Aa</span> Headline M   | `--var-font-size-headline-m`   | `text-(--headline-m)`   | 19 px / 23 px            |
-| <span style="font-size:1.4375rem">Aa</span> Headline L   | `--var-font-size-headline-l`   | `text-(--headline-l)`   | 23 px / 30 px            |
-| <span style="font-size:1.75rem">Aa</span> Headline XL    | `--var-font-size-headline-xl`  | `text-(--headline-xl)`  | 28 px / 40 px            |
-| <span style="font-size:2rem">Aa</span> Headline XXL      | `--var-font-size-headline-xxl` | `text-(--headline-xxl)` | 32 px / 50 px            |
-| <span style="font-size:1.15625rem">Aa</span> Lead        | `--var-font-size-lead`         | `text-lead`             | 18.5 px / 20 px          |
+| Token                                                   | CSS Custom Property            | Tailwind Class      | Value (mobile / tablet) |
+| ------------------------------------------------------- | ------------------------------ | ------------------- | ----------------------- |
+| <span style="font-size:1.5rem">Aa</span> Display        | `--var-font-size-display`      | `text-display`      | 24 px / 70 px           |
+| <span style="font-size:1.0625rem">Aa</span> Headline XS | `--var-font-size-headline-xs`  | `text-headline-xs`  | 17 px                   |
+| <span style="font-size:1.0625rem">Aa</span> Headline S  | `--var-font-size-headline-s`   | `text-headline-s`   | 17 px / 20 px           |
+| <span style="font-size:1.1875rem">Aa</span> Headline M  | `--var-font-size-headline-m`   | `text-headline-m`   | 19 px / 23 px           |
+| <span style="font-size:1.4375rem">Aa</span> Headline L  | `--var-font-size-headline-l`   | `text-headline-l`   | 23 px / 30 px           |
+| <span style="font-size:1.75rem">Aa</span> Headline XL   | `--var-font-size-headline-xl`  | `text-headline-xl`  | 28 px / 40 px           |
+| <span style="font-size:2rem">Aa</span> Headline XXL     | `--var-font-size-headline-xxl` | `text-headline-xxl` | 32 px / 50 px           |
+| <span style="font-size:1.15625rem">Aa</span> Lead       | `--var-font-size-lead`         | `text-lead`         | 18.5 px / 20 px         |
 
 **2. Body & reading**
 
-| Token                                                     | CSS Custom Property            | Tailwind Class     | Value (mobile / tablet) |
-| ---------------------------------------------------------- | --------------------------------- | -------------------- | ------------------------ |
-| <span style="font-size:.96875rem">Aa</span> Body Article | `--var-font-size-body-article` | `text-body-article` | 15.5 px / 17.5 px        |
-| <span style="font-size:1.15625rem">Aa</span> Body L       | `--var-font-size-body-l`       | `text-body-l`       | 18.5 px / 20 px          |
-| <span style="font-size:.9375rem">Aa</span> Body M        | `--var-font-size-body-m`       | `text-body-m`       | 15 px / 17 px            |
-| <span style="font-size:.875rem">Aa</span> Body S         | `--var-font-size-body-s`       | `text-body-s`       | 14 px / 15 px            |
+| Token                                                    | CSS Custom Property            | Tailwind Class      | Value (mobile / tablet) |
+| -------------------------------------------------------- | ------------------------------ | ------------------- | ----------------------- |
+| <span style="font-size:.96875rem">Aa</span> Body Article | `--var-font-size-body-article` | `text-body-article` | 15.5 px / 17.5 px       |
+| <span style="font-size:1.15625rem">Aa</span> Body L      | `--var-font-size-body-l`       | `text-body-l`       | 18.5 px / 20 px         |
+| <span style="font-size:.9375rem">Aa</span> Body M        | `--var-font-size-body-m`       | `text-body-m`       | 15 px / 17 px           |
+| <span style="font-size:.875rem">Aa</span> Body S         | `--var-font-size-body-s`       | `text-body-s`       | 14 px / 15 px           |
 
 **3. Labels & metadata**
 
-| Token                                                       | CSS Custom Property                | Tailwind Class        | Value (mobile / tablet) |
-| -------------------------------------------------------------- | -------------------------------------- | ------------------------ | ------------------------ |
-| <span style="font-size:.875rem">Aa</span> Byline            | `--var-font-size-byline`           | `text-byline`           | 14 px / 15 px            |
-| <span style="font-size:.75rem">Aa</span> Caption            | `--var-font-size-caption`          | `text-caption`          | 12 px                    |
-| <span style="font-size:.9375rem">Aa</span> Kicker Compact   | `--var-font-size-kicker-compact`   | `text-kicker-compact`   | 15 px / 17 px            |
-| <span style="font-size:.875rem">Aa</span> Kicker Prominent  | `--var-font-size-kicker-prominent` | `text-kicker-prominent` | 14 px / 15 px            |
+| Token                                                      | CSS Custom Property                | Tailwind Class          | Value (mobile / tablet) |
+| ---------------------------------------------------------- | ---------------------------------- | ----------------------- | ----------------------- |
+| <span style="font-size:.875rem">Aa</span> Byline           | `--var-font-size-byline`           | `text-byline`           | 14 px / 15 px           |
+| <span style="font-size:.75rem">Aa</span> Caption           | `--var-font-size-caption`          | `text-caption`          | 12 px                   |
+| <span style="font-size:.9375rem">Aa</span> Kicker Compact  | `--var-font-size-kicker-compact`   | `text-kicker-compact`   | 15 px / 17 px           |
+| <span style="font-size:.875rem">Aa</span> Kicker Prominent | `--var-font-size-kicker-prominent` | `text-kicker-prominent` | 14 px / 15 px           |
 
 **4. Interactive**
 
-| Token                                                             | CSS Custom Property                | Tailwind Class            | Value (mobile / tablet) |
-| ---------------------------------------------------------------------- | -------------------------------------- | --------------------------- | ------------------------ |
-| <span style="font-size:1rem">Aa</span> Button                  | `--var-font-size-button`            | `text-button`              | 16 px                    |
-| <span style="font-size:1.0625rem">Aa</span> Interactive Title  | `--var-font-size-interactive-title` | `text-interactive-title`   | 17 px                    |
+| Token                                                         | CSS Custom Property                 | Tailwind Class           | Value (mobile / tablet) |
+| ------------------------------------------------------------- | ----------------------------------- | ------------------------ | ----------------------- |
+| <span style="font-size:1rem">Aa</span> Button                 | `--var-font-size-button`            | `text-button`            | 16 px                   |
+| <span style="font-size:1.0625rem">Aa</span> Interactive Title | `--var-font-size-interactive-title` | `text-interactive-title` | 17 px                   |
 
 #### Letter Spacing
 
@@ -197,10 +195,9 @@ Semantic tokens are built from two internal px-named primitive ramps (`--var-fon
 
 #### Container Widths
 
-| Token             | CSS Custom Property       | Tailwind Class                | Value              |
-| ----------------- | ------------------------- | ----------------------------- | ------------------ |
-| Container         | `--var-container`         | `max-w-(--container)`         | 62.5 rem (1000 px) |
-| Container content | `--var-container-content` | `max-w-(--container-content)` | 38.75 rem (620 px) |
+| Token             | CSS Custom Property       | Tailwind Class  | Value              |
+| ----------------- | ------------------------- | --------------- | ------------------ |
+| Container content | `--var-container-content` | `max-w-content` | 38.75 rem (620 px) |
 
 #### Spacing Scale
 
