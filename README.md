@@ -291,6 +291,28 @@ Superseded by the primitive/semantic tokens above. Values are unchanged - kept a
 | <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#707070;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Grey 600    | `--var-color-grey-600`    | `bg-grey-600` · `text-grey-600`       | `#707070` |
 | <span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:#333333;vertical-align:middle;border:1px solid rgba(0,0,0,.15)"></span> Grey 700    | `--var-color-grey-700`    | `bg-grey-700` · `text-grey-700`       | `#333333` |
 
+##### Migration mapping
+
+Pick the replacement by how the color is used at the call site. Prefer the semantic token; fall back to the primitive where no semantic role fits (e.g. a grey used purely decoratively). The same names apply to Tailwind classes (`text-grey-700` → `text-on-canvas`) and custom properties (`--var-color-grey-700` → `--var-color-on-canvas`).
+
+| Deprecated    | Text / icon               | Background              | Border / stroke      | Primitive fallback |
+| ------------- | ------------------------- | ----------------------- | -------------------- | ------------------ |
+| `emphasis`    | `on-canvas-accent`        | `accent`                | `accent`             | `red-500`          |
+| `alternative` | `accent-alternative`      | `accent-alternative`    | `accent-alternative` | `yellow-400`       |
+| `grey-100`    | –                         | `canvas`                | –                    | `white`            |
+| `grey-200`    | –                         | `background`, `surface` | –                    | `neutral-100`      |
+| `grey-250`    | –                         | –                       | –                    | none, see below    |
+| `grey-300`    | –                         | –                       | –                    | `neutral-200`      |
+| `grey-400`    | –                         | –                       | `stroke`             | `neutral-300`      |
+| `grey-500`    | –                         | –                       | `stroke-strong`      | `neutral-400`      |
+| `grey-600`    | `on-canvas-muted`         | –                       | –                    | `neutral-500`      |
+| `grey-700`    | `on-canvas`, `on-surface` | –                       | –                    | `neutral-700`      |
+
+Watch out for two traps:
+
+- **Numbering shifts.** Grey and neutral numbers don't line up: `grey-200` = `neutral-100`, `grey-300` = `neutral-200`, `grey-400` = `neutral-300`, `grey-500` = `neutral-400`, `grey-600` = `neutral-500`. Only `grey-700` = `neutral-700` keeps its number. Never swap `grey-` for `neutral-` blindly.
+- **`grey-250` has no replacement.** `#f0f0f0` was dropped from the new ramp. Decide per call site between `neutral-100` (`#f8f8f8`, lighter) and `neutral-200` (`#e6e6e6`, darker), and check the result visually.
+
 ---
 
 ### Radius
